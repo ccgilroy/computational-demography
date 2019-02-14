@@ -61,27 +61,31 @@ blogdown::serve_site()
 
 We can use the config options to turn off different parts of the main webpage. If you want to get fancy, there are ways to edit the layout templates and rearrange or customize sections.
 
-Before we're done, we'll want to clean up the example blog posts. I find it helpful sometimes to just delete the `public` folder and regenerate it (with `serve_site` or `build_site`). 
+Before we're done, we'll want to clean up the example blog posts. I also find it helpful sometimes to just delete the `public` folder and regenerate it (with `serve_site` or `build_site`). Finally, so it plays nicely with GitHub, we actually need to rename the `public` folder. To do this, in config.toml:
+
+```
+publishDir = "docs"
+```
 
 ## Host the website
 
-First, we need to make the project directory into a git repo and commit everything. The most important thing is the `public` folder; this is where the generated static html files live.
+First, we need to make the project directory into a git repo and commit everything. The most important thing is the `docs` folder; this is where the generated static html files live.
 
 Then we go to GitHub and create a corresponding repository there. We link up our local repo and push the files up to GitHub. 
 
-At the GitHub repo, we go to Settings and down to 
+At the GitHub repo, we go to Settings and down to GitHub Pages. We turn on Pages and point it to the `docs` folder. Wait a few minutes, and the website should go live.
 
-One more thing! We need to tell GitHub pages that this *isn't* a Jekyll website. How? By creating a blank file called .nojekyll in the website folder: 
+Now we go to https://csde-uw.github.io/computational-demography. Et voilà!
+
+Side note: it's a good idea to tell GitHub pages that this *isn't* a Jekyll website. How? By creating a blank file called .nojekyll in the website folder: 
 
 ```
-cd public
+cd docs
 touch .nojekyll
 git add .nojekyll
 git commit -m "We're using Hugo, not Jekyll, as our static site generator"
 git push
 ```
-
-Now we go to https://csde-uw.github.io/computational-demography. Et voilà!
 
 ## Examples
 <br>
