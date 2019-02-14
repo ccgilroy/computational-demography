@@ -69,7 +69,7 @@ First, we need to make the project directory into a git repo and commit everythi
 
 Then we go to GitHub and create a corresponding repository there. We link up our local repo and push the files up to GitHub. 
 
-
+At the GitHub repo, we go to Settings and down to 
 
 One more thing! We need to tell GitHub pages that this *isn't* a Jekyll website. How? By creating a blank file called .nojekyll in the website folder: 
 
